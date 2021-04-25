@@ -9,7 +9,7 @@ function Header({categories ,change}){
         <label>Filter by:</label>
         <select onChange= {(e) =>change(e.target.value)}>
        {categories.map(p => <option>{p}</option>)} 
-        </select>
+       </select>
       </div>
 
       <div class="collection-sort">

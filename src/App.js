@@ -183,7 +183,7 @@ function change(val)
   return (
   <div className="App">
  
- <Header categories={categories} change={change}/>
+ <Header categories={ categories} change={change}/>
 <Products products={ products.filter(prop => prop.category===choice)}/>
 </div>);}
 export default App;

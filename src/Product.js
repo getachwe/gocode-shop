@@ -5,7 +5,7 @@ function Product(props){
     <div class="product-card">
         <div class="product-image">
         <img src={props.image} alt={props.title} title={props.description}/>       
-         </div>
+        </div>
        <div class="product-info">
          <h5>{props.title}</h5>
 
