@@ -2,8 +2,11 @@ import Header from './Header'
 import './Product.css';
 import Products from './Products';
 import './App.css';
+//import Togle from './Togle';
+import { useState } from 'react';
 function App() {
-  const products1= [
+ 
+  const products= [
     {
       "id": 1,
       "title": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
@@ -166,11 +169,21 @@ function App() {
     }
   ];
   
+  const[choice,setchoice]=useState("")
+  const groupBy = (xs, key) => xs.reduce((rv, x) => {
+    (rv[x[key]] = true || []);
+    return rv;
+  }, {});
+const categories = Object.keys(groupBy(products, 'category'));
+
+function change(val)
+{
+  setchoice(val)
+}
   return (
   <div className="App">
- <Header/>
-<Products products1={ products1}/>
-</div>
-  );
-}
+ 
+ <Header categories={categories} change={change}/>
+<Products products={ products.filter(prop => prop.category===choice)}/>
+</div>);}
 export default App;
